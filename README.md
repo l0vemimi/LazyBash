@@ -1,4 +1,4 @@
-# .bashrc for the lazy with 
+# Bash config for the lazy with 
 # ✨ALPHABETICALLY ORDERED ALIASES✨
 
 ---
