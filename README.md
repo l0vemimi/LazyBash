@@ -1,4 +1,4 @@
-# Bash config for the lazy with 
+# b a s h r c  for the  l a z y  with 
 # ✨ALPHABETICALLY ORDERED ALIASES✨
 
 ---
