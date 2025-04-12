@@ -53,6 +53,16 @@ Ah yes, that thing zsh users like to hold above us; though not AS convenient, th
 
 To move back a dir, type '..'.
 
+With:
+
+                shopt -s autocd
+
+added into your .bashrc, you'll additionally be able to auto cd into a folder, e.g. you want to go to */etc/pacman.d*, type:
+
+                /etc/pacman.d
+
+You'll obviouslly not be able to use the alias *etc* with this if you're trying to cd from your home folder, because it will just try to find the file in the current dir... So another way is to just type *etc* then *pacman.d*, this is less effort than having to type that extra '/' character.
+
 ![dir](img/dir.png)
 
 **Fastfetch**
