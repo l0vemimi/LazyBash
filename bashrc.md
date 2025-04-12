@@ -5,12 +5,7 @@
 
 [[ $- != *i* ]] && return
 
-#tmux
-
-##################################
-###### prompt colours ############
-##################################
-
+###### prompt colours ############d
 ## Regular Colors##       Bold High Intensity         ## Underline                ## Background
 # Black="\[\033[0;30m\]"  # BIBlack="\[\033[1;90m\]"  # UBlack="\[\033[4;30m\]"   # On_Black="\[\033[40m\]" 
 # Red="\[\033[0;31m\]"    # BIRed="\[\033[1;91m\]"    # URed="\[\033[4;31m\]"     # On_Red="\[\033[41m\]" 
@@ -21,10 +16,7 @@
 # Cyan="\[\033[0;36m\]"   # BICyan="\[\033[1;96m\]"   # UCyan="\[\033[4;36m\]"    # On_Cyan="\[\033[46m\]" 
 # White="\[\033[0;37m\]"  # BIWhite="\[\033[1;97m\]"  # UWhite="\[\033[4;37m\]"   # On_White="\[\033[47m\]"
 
-#################################
 ############ prompt #############
-#################################
-
 PS1='\[\033[1;96m\]\u\[\033[1;97m\]:\[\033[1;94m\]\h \[\033[1;97m\]\w \[\033[1;97m\]'
 # PS1='Σ>―(\[\033[36m\]\u\[\033[0m\]○°ω°○\[\033[34m\]\h \[\033[37m\]\w \[\033[0m\])♡ '
 # PS1='\[\033[1;97m\]╭─ \[\033[1;91m\]\u\[\033[1;97m\]:\[\033[1;94m\]\h\[\033[1;97m\]\n╰──╮⋆.°🦋˖⁺\[\033[1;91m\]♡\[\033[1;97m\] ˚\[\033]1;91m\]♥ \[\033[1;97m\]˖⋆ \[\033[1;97m\]\[\033[1;97m\]\n˖\[\033[1;91m\]❤ \[\033[1;97m\]₊╰┈➤  \[\033[1;97m\]\w '
@@ -39,17 +31,12 @@ case ${TERM} in
     ;;
 esac
 
-#################################
 ######### fastfetch #############
-#################################
-
 if [ -f /usr/bin/fastfetch ]; then
 	fastfetch
 fi
 
-#################################
 ####### bash completion #########
-#################################
 
 if [ -f /usr/share/bash-completion/bash_completion ]; then
 	. /usr/share/bash-completion/bash_completion
@@ -57,10 +44,10 @@ elif [ -f /etc/bash_completion.d/000_bash_completion_compat.bash ]; then
 	. /etc/bash_completion/000_bash_completion_compat.bash
 fi
 
-################################
-########### aliases ############
-################################
+########### auto cd ############
+shopt -s autocd
 
+########### aliases ############
 #dirs ##################
 alias ..='cd ..'
 alias ...='cd ../../../'
@@ -95,7 +82,7 @@ alias bi='blkid'
 alias cat='cat -n'
 alias c='clear'
 alias cp='cp -ir'
-alias cSbash='r ~/.bash_history'
+alias cbash='r ~/.bash_history'
 alias co='testcolors'
 #D ######################
 alias d='cd'
@@ -122,7 +109,6 @@ alias fwp='firewall-cmd --list-ports'
 alias grep='grep --color=auto'
 #H #######################
 alias h='history | grep '
-alias ho='d ~/'
 #I #######################
 alias ip='ip -color'
 #J #######################
@@ -206,6 +192,7 @@ alias untg='tar -xvzf'
 alias unlz='lz4 -d'
 #V #######################
 alias vdir='vdir --color=auto'
+alias v='vim'
 #W #######################
 alias wg='sudo wg'
 alias wget='wget -c'
@@ -229,20 +216,14 @@ alias yqg='yay -Qg'
 alias yqd='yay -Qd'
 #Z #######################
 
-#################################
 ############ xdg ################
-#################################
-
 # export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CONFIG_HOME="$HOME/.config"
 # export XDG_STATE_HOME="$HOME/.local/state"
 export XDG_CACHE_HOME="$HOME/.cache"
 # export GNUPGHOME="$XDG_DATA_HOME"/gnupg
 
-#################################
 ######### testing colours #######
-#################################
-
 function testcolors() {
     DEFAULT="\033[39m"
     RESET="\033[0m"
